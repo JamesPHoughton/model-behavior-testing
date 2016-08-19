@@ -1,0 +1,5 @@
+*.2mdl
+*.pyc
+.ipynb_checkpoints/*
+*.vdf
+~*
