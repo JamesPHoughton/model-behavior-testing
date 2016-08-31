@@ -1,0 +1,154 @@
+{UTF-8}
+Infected= INTEG (
+	Infection,
+		Initial Infected)
+	~	Persons
+	~		|
+
+Cumulative Cases= INTEG (
+	Reporting,
+		Initial Infected)
+	~	
+	~		|
+
+Reporting=
+	Infection
+	~	
+	~		|
+
+Initial Susceptible=
+	Total Population - Initial Infected
+	~	
+	~		|
+
+Total Population=
+	1e+07
+	~	Persons
+	~		|
+
+Initial Infected=
+	10
+	~	
+	~		|
+
+Susceptible= INTEG (
+	-Infection,
+		Initial Susceptible)
+	~	Persons
+	~		|
+
+Contact Rate=
+	25
+	~	Contacts/Person/Day
+	~		|
+
+Infection=
+	Susceptible * Contact Rate * (Infected / Total Population) * Infectivity
+	~	Persons/Day
+	~		|
+
+Infectivity=
+	0.02
+	~	Persons/Contact
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 50
+	~	Day
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Day [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.0625
+	~	Day [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Helvetica|12|B|0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Susceptible,266,300,40,20,3,3,0,0,0,0,0,0
+10,2,Infected,456,300,40,20,3,3,0,0,0,0,0,0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(391,300)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(330,300)|
+11,5,396,361,300,6,8,34,3,0,0,1,0,0,0
+10,6,Infection,361,315,27,7,40,3,0,0,-1,0,0,0
+1,7,1,6,1,0,0,0,0,128,0,-1--1--1,,1|(305,340)|
+1,8,2,6,1,0,0,0,0,128,0,-1--1--1,,1|(431,336)|
+10,9,Contact Rate,421,232,39,7,8,3,0,0,0,0,0,0
+10,10,Infectivity,298,232,30,7,8,3,0,0,0,0,0,0
+1,11,10,5,0,0,0,0,0,128,0,-1--1--1,,1|(325,261)|
+1,12,9,5,0,0,0,0,0,128,0,-1--1--1,,1|(394,261)|
+10,13,Total Population,360,363,49,7,8,3,0,0,0,0,0,0
+1,14,13,6,0,0,0,0,0,128,0,-1--1--1,,1|(360,346)|
+10,15,Initial Susceptible,116,446,40,12,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,16,15,1,0,1,0,0,0,64,1,-1--1--1,,1|(181,381)|
+10,17,Initial Infected,638,322,50,7,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128
+1,18,17,2,0,0,0,0,0,64,1,-1--1--1,,1|(548,310)|
+10,19,Cumulative Cases,527,451,40,20,3,3,0,0,0,0,0,0
+12,20,48,373,453,10,8,0,3,0,0,-1,0,0,0
+1,22,24,19,4,0,0,22,0,0,0,-1--1--1,,1|(464,453)|
+1,23,24,20,100,0,0,22,0,0,0,-1--1--1,,1|(406,453)|
+11,24,0,435,453,6,8,34,3,0,0,1,0,0,0
+10,25,Reporting,435,468,31,7,40,3,0,0,-1,0,0,0
+10,26,Infection,434,508,34,7,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128
+1,27,26,25,0,0,0,0,0,128,0,-1--1--1,,1|(434,495)|
+1,28,17,19,0,0,0,0,0,64,1,-1--1--1,,1|(592,374)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Helvetica|12|B|0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,Total Population,311,154,49,7,8,3,0,0,-1,0,0,0
+1,3,2,1,0,1,0,0,0,64,0,-1--1--1,,1|(311,170)|
+10,4,Infection,445,141,34,7,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,5,1,6,0,0,0,0,0,128,0,-1--1--1,,1|(377,162)|
+10,6,Initial Susceptible,461,173,53,7,8,3,0,0,0,0,0,0
+10,7,Initial Infected,311,197,43,7,8,3,0,0,0,0,0,0
+1,8,7,6,0,0,0,0,0,128,0,-1--1--1,,1|(378,186)|
+///---\\\
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Contact,Contacts
+22:Day,Days
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:Initial Infected
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:4
+41:0
+42:1
+24:0
+25:50
+26:50
